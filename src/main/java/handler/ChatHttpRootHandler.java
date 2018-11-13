@@ -1,5 +1,6 @@
 package handler;
 
+import handler.errorHandler.BadRequestHandler;
 import io.undertow.server.HttpHandler;
 import io.undertow.server.HttpServerExchange;
 import org.jetbrains.annotations.NotNull;

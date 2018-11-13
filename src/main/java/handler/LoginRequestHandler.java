@@ -1,15 +1,19 @@
 package handler;
 
+import Entity.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectReader;
+import handler.errorHandler.BadRequestHandler;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import reply.LoginReply;
-import reply.MethodNotAllowedReply;
+import reply.error.MethodNotAllowedReply;
 import reply.Reply;
 import request.LoginRequest;
 import request.Request;
+import utils.db.UserDAO;
+import utils.db.UserDAOImplDummy;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -33,11 +37,12 @@ public class LoginRequestHandler implements RequestHandler {
             LoginRequest loginRequest = reader.readValue(request.getPayload());
             String name = loginRequest.getName();
             logger.info("get login request for name "+name);
-            if (isLoginInUse(name)){
+            User newUser = userDAO.addUser(name);
+            if (newUser==null){
                 logger.warn("relogin trying with username"+name);
                 return LoginReply.loginInUse(name);
             }else {
-                return getLoginReply(name);
+                return getLoginReply(newUser);
             }
         } catch (IOException e) {
             logger.warn("error while reading LoginRequest from "+new String(request.getPayload()));
@@ -46,12 +51,12 @@ public class LoginRequestHandler implements RequestHandler {
     }
 
     @NotNull
-    private LoginReply getLoginReply(String name) {
+    private LoginReply getLoginReply(User user) {
         LoginReply reply = new LoginReply();
-        reply.setUsername(name);
+        reply.setUsername(user.getUsername());
         reply.setOnline(true);
         reply.setId(generteId());
-        reply.setToken(generateToken());
+        reply.setToken(user.getToken());
         return reply;
     }
 
@@ -63,10 +68,6 @@ public class LoginRequestHandler implements RequestHandler {
         return 0;
     }
 
-    private boolean isLoginInUse(String login){
-        return false;
-    }
-    private String generateToken(){
-        return String.valueOf(UUID.randomUUID());
-    }
+
+    private UserDAO userDAO = new UserDAOImplDummy();
 }

@@ -1,8 +1,8 @@
-package handler;
+package handler.errorHandler;
 
-import io.undertow.server.HttpServerExchange;
+import handler.RequestHandler;
 import org.jetbrains.annotations.NotNull;
-import reply.BadRequestReply;
+import reply.error.BadRequestReply;
 import reply.Reply;
 import request.Request;
 

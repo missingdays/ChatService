@@ -1,4 +1,4 @@
-package reply;
+package reply.error;
 
 import utils.HttpCode;
 

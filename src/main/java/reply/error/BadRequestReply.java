@@ -1,7 +1,8 @@
-package reply;
+package reply.error;
 
 import io.undertow.util.HttpString;
 import org.jetbrains.annotations.NotNull;
+import reply.Reply;
 import utils.HttpCode;
 
 import java.nio.ByteBuffer;

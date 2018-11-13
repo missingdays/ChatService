@@ -11,5 +11,5 @@ public interface UserDAO {
     User getUserByToken(String token);
     boolean isUserExist(User user);
     void removeUser(User user);
-    void addUser(User user) throws Exception;
+    User addUser(String name);
 }

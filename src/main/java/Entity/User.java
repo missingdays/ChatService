@@ -16,6 +16,7 @@ public class User {
     private String username;
     @DatabaseField
     private String token;
+    private int id;
 
     public User() {
     }
@@ -64,5 +65,13 @@ public class User {
         System.out.println("Entity.User: " + User2.getUsername());
 // close the connection source
         connectionSource.close();
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

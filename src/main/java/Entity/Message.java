@@ -22,6 +22,7 @@ public class Message {
     private String userName;
     @DatabaseField(id = true)
     private int id;
+    private int userId;
 
     public String getMessage() {
         return message;
@@ -87,5 +88,13 @@ public class Message {
         System.out.println("Entity.User: " + message1.getMessage()+message1.sendTime);
 // close the connection source
         connectionSource.close();
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public int getUserId() {
+        return userId;
     }
 }

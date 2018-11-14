@@ -1,10 +1,15 @@
 package utils.db;
 
 import Entity.User;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class UserDAOImplDummy implements UserDAO {
     @Override
@@ -41,6 +46,16 @@ public class UserDAOImplDummy implements UserDAO {
         tokenHashMap.put(token,newUser );
         return newUser;
     }
+
+    @Override
+    public @NotNull Collection<User> getUsers(Predicate<User> predicate) {
+        return nameHashMap.entrySet()
+                .stream()
+                .map(Map.Entry::getValue)
+                .filter(predicate)
+                .collect(Collectors.toList());
+    }
+
     private String generateToken(){
         return String.valueOf(UUID.randomUUID());
     }

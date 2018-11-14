@@ -7,5 +7,5 @@ import request.Request;
 
 public interface RequestHandler {
     @NotNull
-    Reply handle(Request request);
+    Reply handle(@NotNull Request request);
 }

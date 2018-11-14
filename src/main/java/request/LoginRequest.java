@@ -9,6 +9,7 @@ public class LoginRequest extends Request {
         super(exchange);
     }
     public LoginRequest() {
+
     }
     public String getName() {
         return name;

@@ -8,8 +8,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import reply.LoginReply;
-import reply.error.MethodNotAllowedReply;
 import reply.Reply;
+import reply.error.MethodNotAllowedReply;
 import request.LoginRequest;
 import request.Request;
 import utils.db.UserDAO;
@@ -17,7 +17,6 @@ import utils.db.UserDAOImplDummy;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.util.UUID;
 
 public class LoginRequestHandler implements RequestHandler {
     private static final Logger logger = LogManager.getLogger(RequestHandler.class);
@@ -25,7 +24,7 @@ public class LoginRequestHandler implements RequestHandler {
 
     @NotNull
     @Override
-    public Reply handle(Request request) {
+    public Reply handle(@NotNull Request request) {
         logger.trace(String.format("Login:%s; path:%s;method: %s",
                 new String(request.getPayload(), StandardCharsets.UTF_8),
                 request.getPath(),

@@ -5,6 +5,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Predicate;
@@ -17,12 +18,15 @@ public class MessageDAOImplDummy implements MessageDAO {
     }
 
     @Override
-    public Message addMessage(String message, int userId) {
+    public Message addMessage(String message, int userId, String username) {
         Message mes = new Message();
         mes.setId(id_);
         id_++;
         mes.setMessage(message);
         mes.setUserId(userId);
+        mes.setSendTime(new Date());
+        mes.setUserName(username);
+        storage.put(id_, mes);
         return mes;
     }
 
@@ -35,5 +39,5 @@ public class MessageDAOImplDummy implements MessageDAO {
     }
 
     static int id_ = 0;
-    static HashMap<Integer, Message> storage;
+    static HashMap<Integer, Message> storage = new HashMap<>();
 }

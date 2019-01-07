@@ -3,6 +3,8 @@ package request;
 import io.undertow.server.HttpServerExchange;
 import io.undertow.util.HeaderMap;
 import io.undertow.util.Headers;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -12,6 +14,15 @@ import java.util.Deque;
 import java.util.Map;
 
 public class Request {
+    @Override
+    public String toString() {
+        return "Request{" +
+                "method='" + method + '\'' +
+                ", path='" + path + '\'' +
+                ", authorizationToken='" + authorizationToken + '\'' +
+                '}';
+    }
+
     private String method;
     private String path;
 
@@ -28,6 +39,7 @@ public class Request {
         return authorizationToken;
     }
 
+    protected Logger logger = LogManager.getLogger(this.getClass());
     private Map<String, Deque<String>> queryMap;
     private String authorizationToken;
     private long payload_length;
@@ -38,6 +50,10 @@ public class Request {
         queryMap = exchange.getQueryParameters();
         path = exchange.getRequestPath();
         payload_length = exchange.getRequestContentLength();
+        if (payload_length <= 0) {
+            logger.info("empty body for request: {}", this);
+            payload_length = 0;
+        }
         authorizationToken = exchange.getRequestHeaders().get(Headers.AUTHORIZATION, 0);
         ByteBuffer bb = ByteBuffer.allocate((int) payload_length);
         exchange.getRequestChannel().read(bb);

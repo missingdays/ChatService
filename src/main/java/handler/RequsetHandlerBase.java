@@ -9,7 +9,9 @@ import reply.error.BadRequestReply;
 import reply.error.UnAuthorizedReply;
 import request.Request;
 import utils.db.MessageDAO;
+import utils.db.MessageDAOImplDummy;
 import utils.db.UserDAO;
+import utils.db.UserDAOImplDummy;
 
 public abstract class RequsetHandlerBase implements RequestHandler {
     @Override
@@ -21,7 +23,7 @@ public abstract class RequsetHandlerBase implements RequestHandler {
             return invalidAuthorizationReply(request);
         }
 
-        if (isRequestValid(request)) {
+        if (!isRequestValid(request)) {
             logger.warn("invalid request: {}", request);
             return new BadRequestReply();
         }
@@ -54,7 +56,7 @@ public abstract class RequsetHandlerBase implements RequestHandler {
     }
 
     protected User user;
-    protected UserDAO userDAO;
-    protected MessageDAO messageDAO;
+    protected UserDAO userDAO = new UserDAOImplDummy();
+    protected MessageDAO messageDAO = new MessageDAOImplDummy();
     protected Logger logger = LogManager.getLogger(this.getClass());
 }

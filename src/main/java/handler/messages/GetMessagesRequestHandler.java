@@ -1,5 +1,6 @@
 package handler.messages;
 
+import Entity.Message;
 import handler.RequsetHandlerBase;
 import org.jetbrains.annotations.NotNull;
 import reply.GetMessagesReply;
@@ -7,7 +8,9 @@ import reply.Reply;
 import request.Request;
 
 import java.util.Deque;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 class GetMessagesRequestHandler extends RequsetHandlerBase {
 
@@ -36,13 +39,18 @@ class GetMessagesRequestHandler extends RequsetHandlerBase {
             logger.warn("error while parsing query");
             return false;
         }
-        return offset > 0 && count > 0;
+        return offset >= 0 && count >= 0;
     }
 
     @Override
     protected @NotNull Reply createReply(Request request) {
-        //TODO: add logic
-        return new GetMessagesReply();
+        GetMessagesReply reply = new GetMessagesReply();
+        List<Message> messageList = messageDAO.getMessages(message -> message.getId() >= offset)
+                .stream()
+                .limit(count)
+                .collect(Collectors.toList());
+        reply.setMessages(messageList);
+        return reply;
     }
 
     private Map<String, Deque<String>> query;

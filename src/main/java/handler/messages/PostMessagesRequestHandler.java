@@ -21,7 +21,7 @@ class PostMessagesRequestHandler extends RequsetHandlerBase {
         try {
             parsedRequest = reader.readValue(request.getPayload());
         } catch (IOException e) {
-            logger.warn("error during parse json to {}", parsedRequest.getClass());
+            logger.warn("error during parse json to {}");
         }
         return parsedRequest != null;
     }
@@ -31,7 +31,7 @@ class PostMessagesRequestHandler extends RequsetHandlerBase {
         assert (parsedRequest != null);
         try {
             PostMessageRequest messageRequest = reader.readValue(request.getPayload());
-            Message message = messageDAO.addMessage(messageRequest.getMessage(), user.getId());
+            Message message = messageDAO.addMessage(messageRequest.getMessage(), user.getId(), user.getUsername());
             return getPostMessageReply(message);
         } catch (IOException e) {
             logger.warn("error while reading PostMessageRequest from " + new String(request.getPayload()));

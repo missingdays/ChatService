@@ -27,7 +27,6 @@ public class AbstractFactory <T> {
     public AbstractFactory(String config) throws IOException {
         Properties properties = new Properties();
         properties.load(AbstractFactory.class.getResourceAsStream(config));
-        properties.stringPropertyNames().forEach(System.out::println);
         init(properties);
     }
     @Nullable

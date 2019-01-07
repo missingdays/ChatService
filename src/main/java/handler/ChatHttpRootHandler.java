@@ -3,6 +3,7 @@ package handler;
 import handler.errorHandler.BadRequestHandler;
 import io.undertow.server.HttpHandler;
 import io.undertow.server.HttpServerExchange;
+import io.undertow.util.Headers;
 import org.jetbrains.annotations.NotNull;
 import reply.Reply;
 import request.Request;
@@ -37,6 +38,7 @@ public class ChatHttpRootHandler implements HttpHandler {
     private void sendReply(@NotNull Reply reply, @NotNull HttpServerExchange exchange) {
         exchange.setStatusCode(reply.getStatusCode());
         reply.getHeaders().forEach( (header, values)-> exchange.getResponseHeaders().putAll(header,values ));
+        exchange.getResponseHeaders().put(Headers.CONTENT_TYPE, "application/json");
         exchange.getResponseSender().send(reply.getPayload());
     }
     private RequestHandler badRequestHandler = new BadRequestHandler();

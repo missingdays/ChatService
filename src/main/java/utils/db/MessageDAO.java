@@ -12,7 +12,7 @@ public interface MessageDAO {
     @Nullable Message getMessage(int id);
 
     @Contract(value = "null,_->null;_,_->new")
-    Message addMessage(String message, int userId);
+    Message addMessage(String message, int userId, String username);
 
     @NotNull Collection<Message> getMessages(Predicate<Message> predicate);
 }

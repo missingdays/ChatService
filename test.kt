@@ -1,1 +1,1 @@
-val result = "https://google.com"
+val result = "http://google.com"

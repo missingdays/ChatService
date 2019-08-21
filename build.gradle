@@ -38,7 +38,7 @@ dependencies {
     compile 'io.undertow:undertow-websockets-jsr:2.0.1.Final'
     compile 'com.fasterxml.jackson.core:jackson-databind:2.9.7'
     compile 'com.h2database:h2:1.2.138'
-    compile 'org.kohsuke:github-api:1.95'
+    compile 'org.kohsuke:github-api:2.9.9.2'
     compile 'org.jetbrains:annotations:16.0.3'
 }
 

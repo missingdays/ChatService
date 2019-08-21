@@ -1,0 +1,7 @@
+git branch -D TPV-3538
+ git branch -D TPV-3539
+  git branch -D TPV-3540
+  git branch -D TPV-3541
+  git branch -D TPV-3542
+  git branch -D TPV-3543
+  git branch -D TPV-3544

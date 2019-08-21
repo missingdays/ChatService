@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VulnerabilityScannerManager">
+    <option name="httpRepositories">
+      <list>
+        <DependencyRepositoryView>
+          <option name="pathToFile" value="test.kt" />
+          <option name="source" value="RcFile" />
+          <option name="url" value="http://google.com" />
+        </DependencyRepositoryView>
+      </list>
+    </option>
+    <option name="reportExists" value="true" />
+    <option name="vulnerabilities">
+      <list>
+        <VulnerabilitiesView>
+          <option name="dependenciesView">
+            <list>
+              <DependencyView>
+                <option name="pathToFile" value="pom.xml" />
+                <option name="phase" value="compile" />
+                <option name="pkg">
+                  <PackageView>
+                    <option name="name" value="jackson-databind" />
+                    <option name="namespace" value="com.fasterxml.jackson.core" />
+                    <option name="type" value="maven" />
+                    <option name="version" value="2.9.7" />
+                  </PackageView>
+                </option>
+                <option name="roots">
+                  <list>
+                    <PackageView>
+                      <option name="name" value="jackson-databind" />
+                      <option name="namespace" value="com.fasterxml.jackson.core" />
+                      <option name="type" value="maven" />
+                      <option name="version" value="2.9.7" />
+                    </PackageView>
+                  </list>
+                </option>
+              </DependencyView>
+            </list>
+          </option>
+          <option name="error" value="false" />
+          <option name="packageView">
+            <PackageView>
+              <option name="name" value="jackson-databind" />
+              <option name="namespace" value="com.fasterxml.jackson.core" />
+              <option name="type" value="maven" />
+              <option name="version" value="2.9.7" />
+            </PackageView>
+          </option>
+          <option name="statusMessage" value="" />
+          <option name="vulnerabilities">
+            <list>
+              <VulnerabilityView>
+                <option name="cve" value="CVE-2018-1000873" />
+                <option name="cvssScore" value="6.5" />
+                <option name="cvssVector" value="CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" />
+                <option name="description" value="Fasterxml Jackson version Before 2.9.8 contains a CWE-20: Improper Input Validation vulnerability in Jackson-Modules-Java8 that can result in Causes a denial-of-service (DoS). This attack appear to be exploitable via The victim deserializes malicious input, specifically very large values in the nanoseconds field of a time value. This vulnerability appears to have been fixed in 2.9.8." />
+                <option name="id" value="292c11e9-cf66-4d76-aaf7-b63a091f8891" />
+                <option name="pkg">
+                  <PackageView>
+                    <option name="name" value="jackson-databind" />
+                    <option name="namespace" value="com.fasterxml.jackson.core" />
+                    <option name="type" value="maven" />
+                    <option name="version" value="2.9.7" />
+                  </PackageView>
+                </option>
+                <option name="reference" value="https://ossindex.sonatype.org/vuln/292c11e9-cf66-4d76-aaf7-b63a091f8891" />
+                <option name="title" value="[CVE-2018-1000873]  Improper Input Validation" />
+              </VulnerabilityView>
+              <VulnerabilityView>
+                <option name="cve" value="CVE-2019-12086" />
+                <option name="cvssScore" value="7.5" />
+                <option name="cvssVector" value="CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N" />
+                <option name="description" value="A Polymorphic Typing issue was discovered in FasterXML jackson-databind 2.x before 2.9.9. When Default Typing is enabled (either globally or for a specific property) for an externally exposed JSON endpoint, the service has the mysql-connector-java jar (8.0.14 or earlier) in the classpath, and an attacker can host a crafted MySQL server reachable by the victim, an attacker can send a crafted JSON message that allows them to read arbitrary local files on the server. This occurs because of missing com.mysql.cj.jdbc.admin.MiniAdmin validation." />
+                <option name="id" value="5bbadb96-496f-4534-a513-7a6396f54029" />
+                <option name="pkg">
+                  <PackageView>
+                    <option name="name" value="jackson-databind" />
+                    <option name="namespace" value="com.fasterxml.jackson.core" />
+                    <option name="type" value="maven" />
+                    <option name="version" value="2.9.7" />
+                  </PackageView>
+                </option>
+                <option name="reference" value="https://ossindex.sonatype.org/vuln/5bbadb96-496f-4534-a513-7a6396f54029" />
+                <option name="title" value="[CVE-2019-12086]  Information Exposure" />
+              </VulnerabilityView>
+              <VulnerabilityView>
+                <option name="cve" value="CVE-2018-19362" />
+                <option name="cvssScore" value="9.8" />
+                <option name="cvssVector" value="CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" />
+                <option name="description" value="FasterXML jackson-databind 2.x before 2.9.8 might allow attackers to have unspecified impact by leveraging failure to block the jboss-common-core class from polymorphic deserialization." />
+                <option name="id" value="5afe3c10-61cc-4ca0-99ae-c6ba8f330b45" />
+                <option name="pkg">
+                  <PackageView>
+                    <option name="name" value="jackson-databind" />
+                    <option name="namespace" value="com.fasterxml.jackson.core" />
+                    <option name="type" value="maven" />
+                    <option name="version" value="2.9.7" />
+                  </PackageView>
+                </option>
+                <option name="reference" value="https://ossindex.sonatype.org/vuln/5afe3c10-61cc-4ca0-99ae-c6ba8f330b45" />
+                <option name="title" value="[CVE-2018-19362]  Deserialization of Untrusted Data" />
+              </VulnerabilityView>
+              <VulnerabilityView>
+                <option name="cve" value="CVE-2018-19361" />
+                <option name="cvssScore" value="9.8" />
+                <option name="cvssVector" value="CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" />
+                <option name="description" value="FasterXML jackson-databind 2.x before 2.9.8 might allow attackers to have unspecified impact by leveraging failure to block the openjpa class from polymorphic deserialization." />
+                <option name="id" value="5a041483-5b69-47f8-b8a9-e631830ceaf9" />
+                <option name="pkg">
+                  <PackageView>
+                    <option name="name" value="jackson-databind" />
+                    <option name="namespace" value="com.fasterxml.jackson.core" />
+                    <option name="type" value="maven" />
+                    <option name="version" value="2.9.7" />
+                  </PackageView>
+                </option>
+                <option name="reference" value="https://ossindex.sonatype.org/vuln/5a041483-5b69-47f8-b8a9-e631830ceaf9" />
+                <option name="title" value="[CVE-2018-19361]  Deserialization of Untrusted Data" />
+              </VulnerabilityView>
+              <VulnerabilityView>
+                <option name="cve" value="CVE-2018-19360" />
+                <option name="cvssScore" value="9.8" />
+                <option name="cvssVector" value="CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" />
+                <option name="description" value="FasterXML jackson-databind 2.x before 2.9.8 might allow attackers to have unspecified impact by leveraging failure to block the axis2-transport-jms class from polymorphic deserialization." />
+                <option name="id" value="dc5c85aa-ec0c-42b9-a11b-935184041ee7" />
+                <option name="pkg">
+                  <PackageView>
+                    <option name="name" value="jackson-databind" />
+                    <option name="namespace" value="com.fasterxml.jackson.core" />
+                    <option name="type" value="maven" />
+                    <option name="version" value="2.9.7" />
+                  </PackageView>
+                </option>
+                <option name="reference" value="https://ossindex.sonatype.org/vuln/dc5c85aa-ec0c-42b9-a11b-935184041ee7" />
+                <option name="title" value="[CVE-2018-19360]  Deserialization of Untrusted Data" />
+              </VulnerabilityView>
+              <VulnerabilityView>
+                <option name="cve" value="CVE-2019-12814" />
+                <option name="cvssScore" value="5.9" />
+                <option name="cvssVector" value="CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N" />
+                <option name="description" value="A Polymorphic Typing issue was discovered in FasterXML jackson-databind 2.x through 2.9.9. When Default Typing is enabled (either globally or for a specific property) for an externally exposed JSON endpoint and the service has JDOM 1.x or 2.x jar in the classpath, an attacker can send a specifically crafted JSON message that allows them to read arbitrary local files on the server." />
+                <option name="id" value="3e008100-e0d4-45bf-afd2-9d5e9b13efa7" />
+                <option name="pkg">
+                  <PackageView>
+                    <option name="name" value="jackson-databind" />
+                    <option name="namespace" value="com.fasterxml.jackson.core" />
+                    <option name="type" value="maven" />
+                    <option name="version" value="2.9.7" />
+                  </PackageView>
+                </option>
+                <option name="reference" value="https://ossindex.sonatype.org/vuln/3e008100-e0d4-45bf-afd2-9d5e9b13efa7" />
+                <option name="title" value="[CVE-2019-12814]  Information Exposure" />
+              </VulnerabilityView>
+              <VulnerabilityView>
+                <option name="cve" value="CVE-2019-12384" />
+                <option name="cvssScore" value="5.9" />
+                <option name="cvssVector" value="CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N" />
+                <option name="description" value="FasterXML jackson-databind 2.x before 2.9.9 might allow attackers to have a variety of impacts by leveraging failure to block the logback-core class from polymorphic deserialization. Depending on the classpath content, remote code execution may be possible." />
+                <option name="id" value="33d59f1d-83ff-4527-9707-c3f1507b6125" />
+                <option name="pkg">
+                  <PackageView>
+                    <option name="name" value="jackson-databind" />
+                    <option name="namespace" value="com.fasterxml.jackson.core" />
+                    <option name="type" value="maven" />
+                    <option name="version" value="2.9.7" />
+                  </PackageView>
+                </option>
+                <option name="reference" value="https://ossindex.sonatype.org/vuln/33d59f1d-83ff-4527-9707-c3f1507b6125" />
+                <option name="title" value="[CVE-2019-12384]  Deserialization of Untrusted Data" />
+              </VulnerabilityView>
+              <VulnerabilityView>
+                <option name="cve" value="CVE-2019-14439" />
+                <option name="cvssScore" value="7.5" />
+                <option name="cvssVector" value="CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N" />
+                <option name="description" value="A Polymorphic Typing issue was discovered in FasterXML jackson-databind 2.x before 2.9.9.2. This occurs when Default Typing is enabled (either globally or for a specific property) for an externally exposed JSON endpoint and the service has the logback jar in the classpath." />
+                <option name="id" value="ac9dce23-7b35-4691-b05e-a68f58d48b8c" />
+                <option name="pkg">
+                  <PackageView>
+                    <option name="name" value="jackson-databind" />
+                    <option name="namespace" value="com.fasterxml.jackson.core" />
+                    <option name="type" value="maven" />
+                    <option name="version" value="2.9.7" />
+                  </PackageView>
+                </option>
+                <option name="reference" value="https://ossindex.sonatype.org/vuln/ac9dce23-7b35-4691-b05e-a68f58d48b8c" />
+                <option name="title" value="[CVE-2019-14439] A Polymorphic Typing issue was discovered in FasterXML jackson-databind 2.x befo..." />
+              </VulnerabilityView>
+              <VulnerabilityView>
+                <option name="cve" value="CVE-2019-14379" />
+                <option name="cvssScore" value="9.8" />
+                <option name="cvssVector" value="CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" />
+                <option name="description" value="SubTypeValidator.java in FasterXML jackson-databind before 2.9.9.2 mishandles default typing when ehcache is used, leading to remote code execution." />
+                <option name="id" value="e5794172-1257-4372-9baf-7b87307a3cc9" />
+                <option name="pkg">
+                  <PackageView>
+                    <option name="name" value="jackson-databind" />
+                    <option name="namespace" value="com.fasterxml.jackson.core" />
+                    <option name="type" value="maven" />
+                    <option name="version" value="2.9.7" />
+                  </PackageView>
+                </option>
+                <option name="reference" value="https://ossindex.sonatype.org/vuln/e5794172-1257-4372-9baf-7b87307a3cc9" />
+                <option name="title" value="[CVE-2019-14379] SubTypeValidator.java in FasterXML jackson-databind before 2.9.9.2 mishandles de..." />
+              </VulnerabilityView>
+            </list>
+          </option>
+        </VulnerabilitiesView>
+        <VulnerabilitiesView>
+          <option name="dependenciesView">
+            <list>
+              <DependencyView>
+                <option name="pathToFile" value="pom.xml" />
+                <option name="phase" value="compile" />
+                <option name="pkg">
+                  <PackageView>
+                    <option name="name" value="undertow-core" />
+                    <option name="namespace" value="io.undertow" />
+                    <option name="type" value="maven" />
+                    <option name="version" value="2.0.1.Final" />
+                  </PackageView>
+                </option>
+                <option name="roots">
+                  <list>
+                    <PackageView>
+                      <option name="name" value="undertow-core" />
+                      <option name="namespace" value="io.undertow" />
+                      <option name="type" value="maven" />
+                      <option name="version" value="2.0.1.Final" />
+                    </PackageView>
+                  </list>
+                </option>
+              </DependencyView>
+            </list>
+          </option>
+          <option name="error" value="false" />
+          <option name="packageView">
+            <PackageView>
+              <option name="name" value="undertow-core" />
+              <option name="namespace" value="io.undertow" />
+              <option name="type" value="maven" />
+              <option name="version" value="2.0.1.Final" />
+            </PackageView>
+          </option>
+          <option name="statusMessage" value="" />
+          <option name="vulnerabilities">
+            <list>
+              <VulnerabilityView>
+                <option name="cve" value="CVE-2018-1067" />
+                <option name="cvssScore" value="6.1" />
+                <option name="cvssVector" value="CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N" />
+                <option name="description" value="In Undertow before versions 7.1.2.CR1, 7.1.2.GA it was found that the fix for CVE-2016-4993 was incomplete and Undertow web server is vulnerable to the injection of arbitrary HTTP headers, and also response splitting, due to insufficient sanitization and validation of user input before the input is used as part of an HTTP header value." />
+                <option name="id" value="a3777932-021c-430e-8cab-33cbc613e42b" />
+                <option name="pkg">
+                  <PackageView>
+                    <option name="name" value="undertow-core" />
+                    <option name="namespace" value="io.undertow" />
+                    <option name="type" value="maven" />
+                    <option name="version" value="2.0.1.Final" />
+                  </PackageView>
+                </option>
+                <option name="reference" value="https://ossindex.sonatype.org/vuln/a3777932-021c-430e-8cab-33cbc613e42b" />
+                <option name="title" value="[CVE-2018-1067]  Improper Neutralization of CRLF Sequences in HTTP Headers (&quot;HTTP Response Splitting&quot;)" />
+              </VulnerabilityView>
+              <VulnerabilityView>
+                <option name="cve" value="CVE-2019-3888" />
+                <option name="cvssScore" value="9.8" />
+                <option name="cvssVector" value="CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" />
+                <option name="description" value="A vulnerability was found in Undertow web server before 2.0.21. An information exposure of plain text credentials through log files because Connectors.executeRootHandler:402 logs the HttpServerExchange object at ERROR level using UndertowLogger.REQUEST_LOGGER.undertowRequestFailed(t, exchange)" />
+                <option name="id" value="eb3943f5-e276-44b4-8350-35045126ee3a" />
+                <option name="pkg">
+                  <PackageView>
+                    <option name="name" value="undertow-core" />
+                    <option name="namespace" value="io.undertow" />
+                    <option name="type" value="maven" />
+                    <option name="version" value="2.0.1.Final" />
+                  </PackageView>
+                </option>
+                <option name="reference" value="https://ossindex.sonatype.org/vuln/eb3943f5-e276-44b4-8350-35045126ee3a" />
+                <option name="title" value="[CVE-2019-3888]  Credentials Management" />
+              </VulnerabilityView>
+            </list>
+          </option>
+        </VulnerabilitiesView>
+        <VulnerabilitiesView>
+          <option name="dependenciesView">
+            <list>
+              <DependencyView>
+                <option name="pathToFile" value="pom.xml" />
+                <option name="phase" value="compile" />
+                <option name="pkg">
+                  <PackageView>
+                    <option name="name" value="undertow-servlet" />
+                    <option name="namespace" value="io.undertow" />
+                    <option name="type" value="maven" />
+                    <option name="version" value="2.0.1.Final" />
+                  </PackageView>
+                </option>
+                <option name="roots">
+                  <list>
+                    <PackageView>
+                      <option name="name" value="undertow-servlet" />
+                      <option name="namespace" value="io.undertow" />
+                      <option name="type" value="maven" />
+                      <option name="version" value="2.0.1.Final" />
+                    </PackageView>
+                  </list>
+                </option>
+              </DependencyView>
+            </list>
+          </option>
+          <option name="error" value="false" />
+          <option name="packageView">
+            <PackageView>
+              <option name="name" value="undertow-servlet" />
+              <option name="namespace" value="io.undertow" />
+              <option name="type" value="maven" />
+              <option name="version" value="2.0.1.Final" />
+            </PackageView>
+          </option>
+          <option name="statusMessage" value="" />
+          <option name="vulnerabilities">
+            <list>
+              <VulnerabilityView>
+                <option name="cve" value="CVE-2018-1067" />
+                <option name="cvssScore" value="6.1" />
+                <option name="cvssVector" value="CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N" />
+                <option name="description" value="In Undertow before versions 7.1.2.CR1, 7.1.2.GA it was found that the fix for CVE-2016-4993 was incomplete and Undertow web server is vulnerable to the injection of arbitrary HTTP headers, and also response splitting, due to insufficient sanitization and validation of user input before the input is used as part of an HTTP header value." />
+                <option name="id" value="a3777932-021c-430e-8cab-33cbc613e42b" />
+                <option name="pkg">
+                  <PackageView>
+                    <option name="name" value="undertow-servlet" />
+                    <option name="namespace" value="io.undertow" />
+                    <option name="type" value="maven" />
+                    <option name="version" value="2.0.1.Final" />
+                  </PackageView>
+                </option>
+                <option name="reference" value="https://ossindex.sonatype.org/vuln/a3777932-021c-430e-8cab-33cbc613e42b" />
+                <option name="title" value="[CVE-2018-1067]  Improper Neutralization of CRLF Sequences in HTTP Headers (&quot;HTTP Response Splitting&quot;)" />
+              </VulnerabilityView>
+              <VulnerabilityView>
+                <option name="cve" value="CVE-2019-3888" />
+                <option name="cvssScore" value="9.8" />
+                <option name="cvssVector" value="CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" />
+                <option name="description" value="A vulnerability was found in Undertow web server before 2.0.21. An information exposure of plain text credentials through log files because Connectors.executeRootHandler:402 logs the HttpServerExchange object at ERROR level using UndertowLogger.REQUEST_LOGGER.undertowRequestFailed(t, exchange)" />
+                <option name="id" value="eb3943f5-e276-44b4-8350-35045126ee3a" />
+                <option name="pkg">
+                  <PackageView>
+                    <option name="name" value="undertow-servlet" />
+                    <option name="namespace" value="io.undertow" />
+                    <option name="type" value="maven" />
+                    <option name="version" value="2.0.1.Final" />
+                  </PackageView>
+                </option>
+                <option name="reference" value="https://ossindex.sonatype.org/vuln/eb3943f5-e276-44b4-8350-35045126ee3a" />
+                <option name="title" value="[CVE-2019-3888]  Credentials Management" />
+              </VulnerabilityView>
+            </list>
+          </option>
+        </VulnerabilitiesView>
+      </list>
+    </option>
+  </component>
+</project>

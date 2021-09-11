@@ -7,11 +7,8 @@ import java.io.IOException;
 
 import java.util.*;
 
-
-
 public class Server {
     private static final Logger logger = LogManager.getLogger(Server.class);
-    private static final String youtrackApiKey = "perm:RXZnZW55LkJvdnlraW4=.VnVsbmVyYWJpbGl0eSBzZWFyY2ggHARHQRBwbSRnaW4=.SgaxEWaNOrgZSqEd4Nf6bAoGFIkbWT";
     public static void main(String[] args) throws IOException {
         int port = Integer.parseInt(System.getenv("PORT"));
         Undertow server = Undertow.builder()
